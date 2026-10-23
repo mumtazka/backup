@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { Award, CalendarDays, GraduationCap, Orbit } from 'lucide-react';
+import { BadgeCheck, BookOpenCheck, CalendarDays, Orbit } from 'lucide-react';
 import { certifications, education } from '../data';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { useTilt } from '../hooks/useTilt';
@@ -24,7 +24,7 @@ const Education = () => {
         <div className="grid lg:grid-cols-12 gap-14 lg:gap-20">
           <div className="lg:col-span-7">
             <div className="mb-8 flex items-center gap-3 text-sm font-semibold text-foreground">
-              <span className="education-symbol"><GraduationCap size={18} /></span>
+              <span className="education-symbol education-symbol--book"><BookOpenCheck size={19} /></span>
               Education timeline
             </div>
             <div className="education-timeline">
@@ -53,7 +53,7 @@ const Education = () => {
 
           <div className="lg:col-span-5">
             <div data-reveal data-reveal-delay="0.12" className="mb-8 flex items-center gap-3 text-sm font-semibold text-foreground">
-              <span className="education-symbol"><Award size={18} /></span>
+              <span className="education-symbol education-symbol--badge"><BadgeCheck size={19} /></span>
               Certifications
             </div>
             <div className="space-y-5">
