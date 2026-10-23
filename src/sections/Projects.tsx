@@ -153,6 +153,17 @@ const Projects = () => {
                   </div>
                 </div>
                 <p className="text-muted-foreground text-sm leading-relaxed">{selectedProject.description}</p>
+                {selectedProject.url ? (
+                  <a
+                    href={selectedProject.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(event) => event.stopPropagation()}
+                    className="inline-flex items-center gap-2 mt-4 px-4 py-2 rounded-full border border-primary/40 text-primary text-sm font-semibold hover:bg-primary hover:text-primary-foreground transition-colors"
+                  >
+                    Open live project <ExternalLink size={15} />
+                  </a>
+                ) : null}
               </div>
               <button
                 type="button"

@@ -5,16 +5,12 @@ import aiIcon from './assets/ai.webp';
 import aiBg from './assets/aibg.webp';
 import softSkillIcon from './assets/handshake.webp';
 import softSkillBg from './assets/skillbg.webp';
-import personalCover from './assets/perangkat1.webp';
-import personalImage1 from './assets/perangkat1.webp';
-import personalImage2 from './assets/perangkat2.webp';
-import personalImage3 from './assets/perangkat3.webp';
-import personalImage4 from './assets/perangkat4.webp';
-import ubuntuCover from './assets/belajar1.webp';
-import ubuntuImage1 from './assets/belajar1.webp';
-import ubuntuImage2 from './assets/belajar2.webp';
-import ubuntuImage3 from './assets/belajar3.webp';
-import ubuntuImage4 from './assets/belajar4.webp';
+import metrolistCover from './assets/metrolist-desktop.webp';
+import metrolistImage1 from './assets/metrolist-desktop.webp';
+import metrolistImage2 from './assets/metrolist-desktop-detail.webp';
+import metrolistSettings from './assets/metrolist-settings.webp';
+import metrolistListenTogether from './assets/metrolist-listen-together.webp';
+import metrolistLyrics from './assets/metrolist-lyrics.webp';
 import simpelCover from './assets/simpel.webp';
 import simpelImage1 from './assets/simpel.webp';
 import simpelImage2 from './assets/simpel2.webp';
@@ -49,6 +45,7 @@ export type ProjectItem = {
   technologies: string[];
   cover: string;
   images: string[];
+  url?: string;
 };
 
 export type EducationItem = {
@@ -90,7 +87,6 @@ export const navigation: NavItem[] = [
   { id: 'skills', label: 'Skills' },
   { id: 'projects', label: 'Projects' },
   { id: 'education', label: 'Education' },
-  { id: 'contact', label: 'Contact' },
 ];
 
 export const socialLinks: SocialLink[] = [
@@ -128,33 +124,24 @@ export const skillCategories: SkillCategory[] = [
 export const projects: ProjectItem[] = [
   {
     id: 1,
-    title: 'Website about Personal Devices',
-    category: 'Personal Project',
+    title: 'Metrolist Desktop Music Player',
+    category: 'Open-source Desktop App',
     year: '2025',
-    description: 'Static website showcasing my personal devices.',
-    technologies: ['HTML', 'CSS', 'JavaScript'],
-    cover: personalCover,
-    images: [personalImage1, personalImage2, personalImage3, personalImage4],
+    description: 'A Kotlin desktop music player born from boredom and a small rebellion against expensive Spotify subscriptions. Still under development, and everyone is welcome to contribute.',
+    technologies: ['Kotlin', 'Compose Desktop', 'Open source'],
+    cover: metrolistCover,
+    images: [metrolistImage1, metrolistImage2, metrolistSettings, metrolistListenTogether, metrolistLyrics],
   },
   {
     id: 2,
-    title: 'Learning Ubuntu Server',
-    category: 'School Project',
-    year: '2025',
-    description: 'Website to learn server configuration.',
-    technologies: ['HTML', 'Tailwind CSS', 'Alpine.js'],
-    cover: ubuntuCover,
-    images: [ubuntuImage1, ubuntuImage2, ubuntuImage3, ubuntuImage4],
-  },
-  {
-    id: 3,
     title: 'SIMPEL_Kuliah',
     category: 'Internship project',
     year: '2025',
-    description: 'Debug, add features and optimizing',
+    description: 'Web pengelolaan peminjaman barang, ruang, dan layanan aduan untuk Vokasi UNY. I worked on debugging, adding features, and improving the experience.',
     technologies: ['React', 'TypeScript', 'Supabase'],
     cover: simpelCover,
     images: [simpelImage1, simpelImage2, simpelImage3, simpelImage4],
+    url: 'http://simpel-kuliah.netlify.app/',
   },
 ];
 

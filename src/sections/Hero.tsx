@@ -1,4 +1,4 @@
-import { ArrowDownRight, ArrowUpRight, Code2, GraduationCap, MapPin, MousePointer2 } from 'lucide-react';
+import { ArrowDownRight, ArrowUpRight, Code2, Github, GraduationCap, MapPin, MousePointer2, Sparkles, Terminal } from 'lucide-react';
 import { useRef } from 'react';
 import { gsap } from 'gsap';
 import { profile, resumeFile } from '../data';
@@ -11,6 +11,15 @@ const Hero = () => {
   const parts = profile.name.split(' ');
   const firstName = parts.slice(0, -1).join(' ');
   const lastName = parts.slice(-1);
+  const codeLines = [
+    'const portfolio = {',
+    '  ideas: "curious",',
+    '  craft: [React, AI],',
+    '  location: "Semarang"',
+    '};',
+    '',
+    'portfolio.build();',
+  ];
   useScrollReveal(sectionRef);
   useTilt(sectionRef);
 
@@ -84,6 +93,17 @@ const Hero = () => {
               >
                 <span>View résumé</span>
               </a>
+              <a
+                href={profile.socialMedia.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-cursor
+                className="magnetic-button group inline-flex items-center justify-center gap-1.5 md:gap-2 px-5 md:px-7 py-2.5 md:py-3 bg-transparent text-foreground text-sm md:text-base font-semibold rounded-full border-2 border-white/15 hover:border-primary/70 hover:text-primary hover:bg-primary/5 transition-all duration-300"
+              >
+                <Github className="w-4 h-4 md:w-5 md:h-5" />
+                <span>See GitHub</span>
+                <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+              </a>
             </div>
 
             <div data-reveal data-reveal-delay="0.4" className="grid grid-cols-2 gap-3 mt-12 w-full max-w-xl">
@@ -111,13 +131,14 @@ const Hero = () => {
               <div className="absolute -inset-5 rounded-[2rem] border border-muted-foreground/10 -rotate-6 transition-transform duration-700 hover:-rotate-3" />
               <div className="absolute -inset-12 rounded-full border border-primary/10 animate-[spin_24s_linear_infinite]" />
               <div className="absolute inset-0 rounded-[2rem] bg-primary/10 blur-2xl" />
-              <div className="relative h-full w-full overflow-hidden rounded-[2rem] border border-white/10 bg-card/50 p-3 shadow-2xl shadow-black/30">
-              <img
-                src={profile.heroImage}
-                alt={profile.name}
-                  className="h-full w-full object-cover rounded-[1.35rem] transition-transform duration-700 hover:scale-105"
-              />
-                <div className="absolute inset-3 rounded-[1.35rem] bg-gradient-to-t from-background/70 via-transparent to-transparent pointer-events-none" />
+              <div className="hero-terminal relative h-full w-full overflow-hidden rounded-[2rem] border border-white/10 bg-card/50 p-3 shadow-2xl shadow-black/30">
+                <div className="hero-terminal__glow" />
+                <div className="hero-terminal__dots"><span /><span /><span /><b><Terminal size={13} /> mumtaz@portfolio:~</b></div>
+                <div className="hero-terminal__body">
+                  <div className="hero-terminal__line-numbers">{codeLines.map((_, index) => <span key={index}>{String(index + 1).padStart(2, '0')}</span>)}</div>
+                  <div className="hero-terminal__code">{codeLines.map((line, index) => <p key={`${line}-${index}`} className={index === 6 ? 'hero-terminal__command' : ''}>{line || '\u00a0'}{index === 6 ? <i>_</i> : null}</p>)}</div>
+                </div>
+                <div className="hero-terminal__status"><span><span className="hero-terminal__pulse" /> available for ideas</span><Sparkles size={15} /></div>
                 <div className="absolute left-7 bottom-7 right-7 flex items-end justify-between">
                   <div className="rounded-lg border border-white/10 bg-background/70 px-3 py-2 backdrop-blur-md">
                     <p className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Building with</p>

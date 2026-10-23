@@ -6,7 +6,6 @@ import Hero from './sections/Hero';
 import Skills from './sections/Skills';
 import Projects from './sections/Projects';
 import Education from './sections/Education';
-import Contact from './sections/Contact';
 
 const App = () => {
   useEffect(() => {
@@ -43,9 +42,6 @@ const App = () => {
         <Projects />
         <Education />
       </main>
-      <div className="relative z-10">
-        <Contact />
-      </div>
     </div>
   );
 };
