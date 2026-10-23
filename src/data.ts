@@ -137,7 +137,7 @@ export const projects: ProjectItem[] = [
     title: 'SIMPEL_Kuliah',
     category: 'Internship project',
     year: '2025',
-    description: 'Web pengelolaan peminjaman barang, ruang, dan layanan aduan untuk Vokasi UNY. I worked on debugging, adding features, and improving the experience.',
+    description: 'A web platform for managing equipment loans, room bookings, and service reports for Vokasi UNY. I worked on debugging, adding features, and improving the overall experience.',
     technologies: ['React', 'TypeScript', 'Supabase'],
     cover: simpelCover,
     images: [simpelImage1, simpelImage2, simpelImage3, simpelImage4],
