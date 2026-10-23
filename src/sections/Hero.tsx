@@ -124,7 +124,7 @@ const Hero = () => {
             </div>
           </div>
 
-          <div data-reveal data-reveal-delay="0.18" className="order-1 lg:order-2 relative flex justify-center lg:justify-end">
+          <div data-reveal data-reveal-delay="0.18" className="order-1 lg:order-2 relative hidden justify-center lg:flex lg:justify-end">
             <div className="hero-visual-wrap relative w-[min(82vw,440px)] aspect-square" onPointerMove={moveVisual} onPointerLeave={resetVisual}>
               <div ref={visualRef} data-tilt className="tilt-panel hero-visual h-full w-full">
               <div className="absolute -inset-5 rounded-[2rem] border border-primary/20 rotate-6 transition-transform duration-700 hover:rotate-3" />
