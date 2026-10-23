@@ -342,6 +342,31 @@ a {
   box-shadow: 0 0 2rem hsl(var(--primary) / 0.1);
 }
 
+.skill-showcase-card {
+  min-height: 16rem;
+  border: 1px solid hsl(var(--foreground) / 0.11);
+  background: linear-gradient(145deg, hsl(var(--card) / 0.9), hsl(var(--background) / 0.88));
+  box-shadow: 0 1.5rem 4rem hsl(var(--background) / 0.32);
+  transition: border-color 0.45s ease, box-shadow 0.45s ease, transform 0.45s ease;
+}
+
+.skill-showcase-card--feature { min-height: 35rem; }
+.skill-showcase-card:hover { border-color: hsl(var(--primary) / 0.46); box-shadow: 0 2rem 5rem hsl(var(--primary) / 0.1); }
+.skill-showcase-card__image { position: absolute; inset: 0; background-position: center; background-size: cover; opacity: 0.22; mix-blend-mode: screen; transition: transform 0.8s ease, opacity 0.5s ease; }
+.skill-showcase-card:hover .skill-showcase-card__image { opacity: 0.34; transform: scale(1.06); }
+.skill-showcase-card__wash { position: absolute; inset: 0; background: linear-gradient(145deg, hsl(var(--background) / 0.16), hsl(var(--background) / 0.86) 75%); }
+.skill-index { color: hsl(var(--foreground) / 0.45); font: 0.68rem ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: 0.15em; }
+.skill-tool-list { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 1.35rem; }
+.skill-tool-list span { padding: 0.36rem 0.62rem; color: hsl(var(--foreground) / 0.72); border: 1px solid hsl(var(--primary) / 0.22); border-radius: 999px; background: hsl(var(--primary) / 0.06); font: 0.62rem ui-monospace, SFMono-Regular, Menlo, monospace; }
+.skill-card-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 2.2rem; padding-top: 0.9rem; color: hsl(var(--muted-foreground)); border-top: 1px solid hsl(var(--foreground) / 0.1); font: 0.65rem ui-monospace, SFMono-Regular, Menlo, monospace; text-transform: uppercase; letter-spacing: 0.1em; }
+.skill-card-footer span { display: inline-flex; align-items: center; gap: 0.45rem; }.skill-card-footer i { width: 0.45rem; height: 0.45rem; border-radius: 50%; background: #4ade80; box-shadow: 0 0 0 0 rgb(74 222 128 / 0.45); animation: skill-pulse 2s infinite; }
+.skill-manifesto--new { min-height: 16rem; border-radius: 0; border-left: 1px solid hsl(var(--primary) / 0.45); border-bottom: 1px solid hsl(var(--primary) / 0.25); background: linear-gradient(135deg, hsl(var(--card) / 0.6), transparent); }
+@keyframes skill-pulse { 70% { box-shadow: 0 0 0 0.4rem rgb(74 222 128 / 0); } 100% { box-shadow: 0 0 0 0 rgb(74 222 128 / 0); } }
+
+@media (max-width: 1023px) {
+  .skill-showcase-card--feature { min-height: 28rem; }
+}
+
 .skill-manifesto {
   display: flex;
   min-height: 12rem;

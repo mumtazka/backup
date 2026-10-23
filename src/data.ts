@@ -34,6 +34,7 @@ export type SkillCategory = {
   icon: string;
   bgImage: string;
   description: string;
+  tools: string[];
 };
 
 export type ProjectItem = {
@@ -103,7 +104,8 @@ export const skillCategories: SkillCategory[] = [
     icon: programmingIcon,
     bgImage: programmingBg,
     description:
-      'Experienced with React, TypeScript, SQL databases, backend APIs, hosting, domains, and server setup.',
+      'I turn ideas into reliable interfaces and useful products, from the first component to deployment.',
+    tools: ['Python', 'React', 'TypeScript', 'SQL', 'APIs', 'Git'],
   },
   {
     name: 'AI',
@@ -111,6 +113,7 @@ export const skillCategories: SkillCategory[] = [
     bgImage: aiBg,
     description:
       'Strong in prompt engineering, automation, AI feature integration, and understanding how AI systems behave.',
+    tools: ['Prompting', 'Automation', 'AI APIs'],
   },
   {
     name: 'Soft Skills',
@@ -118,6 +121,7 @@ export const skillCategories: SkillCategory[] = [
     bgImage: softSkillBg,
     description:
       'Good teamwork, responsibility, adaptability, and writing clarity. Speaking confidence needs a bit of improvement.',
+    tools: ['Teamwork', 'Adaptability', 'Writing'],
   },
 ];
 
